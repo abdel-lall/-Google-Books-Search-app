@@ -1,0 +1,74 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#173f5f;
+    color: white;
+    text-align: center;
+  }
+  .navbar{
+    
+    background-color:#173f5f;
+    color: white;
+}
+.jumbotron{
+  background-image: url("./bgjum.jpg");
+  background-size: cover;
+}
+.gob{
+  font-weight: 100;
+}
+#brand{
+  color :white ;
+}
+  #search,#save{
+    color: rgb(185, 184, 184)
+  }
+  #search:hover,#save:hover{
+    color: white;
+  }
+  #searchform{
+    width: 100%;
+  }
+  #inputsearch{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+#view,#search,#save,#delete{
+  color: white;
+  background-color: #173f5f;
+  border-color: #173f5f;
+  margin-left: 10px;
+}
+#colform{
+  border-width: 2px;
+  border-style: solid;
+  border-color: #82bbc6;
+  padding-top: 10px;
+}
+#resultdiv{
+  margin-top: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #82bbc6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 100px;
+}
+#bktitle{
+  color: #173f5f;
+  font-weight: 200;
+}
+.searchcard{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #82bbc6;
+  padding: 10px;
+  margin-top: 10px;
+}
+#titleresults{
+  color: #173f5f;
+  font-weight: 400;
+  font-size: 30px;
+}
