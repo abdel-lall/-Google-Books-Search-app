@@ -7,7 +7,8 @@ import Modal from "../components/modal"
 class Search extends Component {
     state = {
         disData: [],
-        modal: {}
+        modal: {},
+        title:""
     }
     componentDidMount() {
         API.getBooks().then((res) => {
@@ -45,10 +46,12 @@ class Search extends Component {
     deleteBook = (id) => {
         console.log(id)
         API.deleteBooks(id).then((res) => {
-            this.setState({ modal: { display: "inline-block", backgroundColor: 'rgba(52, 52, 52, 0.8)' } })
+            this.setState({ modal: { display: "inline-block", backgroundColor: 'rgba(52, 52, 52, 0.8)' },
+                            title: res.data.title })
             setTimeout(() => {
-                this.setState({ modal: {} })
-            }, 1000)
+                this.setState({ modal: {} ,
+                            title: ""})
+            }, 1500)
             API.getBooks().then((res) => {
                 let disArray = []
                 if (res.data) {
@@ -90,7 +93,7 @@ class Search extends Component {
                 <ResultDiv>
                     {this.state.disData}
                 </ResultDiv>
-                <Modal rol={""} styling={this.state.modal} />
+                <Modal rol={""} styling={this.state.modal} title={this.state.title}/>
             </div>
         )
     }

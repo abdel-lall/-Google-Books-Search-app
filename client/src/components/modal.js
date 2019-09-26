@@ -10,7 +10,7 @@ class Modal extends Component{
         <div className="modal-dialog" role="document" >
             <div className="modal-content">
                 <div className="modal-header">
-                    <h1 className="modal-title" id="artsvd">{this.props.rol==="save"? "Book Has Been Saved" : "Book Has Been Deleted"}</h1>
+                    <h1 className="modal-title" id="artsvd">{this.props.rol==="save"? `${this.props.title} Has Been Saved` : `${this.props.title} Has Been Deleted`}</h1>
                 </div>
             </div>
         </div>

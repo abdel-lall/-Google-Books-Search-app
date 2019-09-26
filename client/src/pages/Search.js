@@ -11,7 +11,8 @@ class Search extends Component {
         data: [],
         query: "",
         disarray: [],
-        modal:{}
+        modal:{},
+        title:""
     }
 
     searchBooks = (query) => {
@@ -26,7 +27,7 @@ class Search extends Component {
                     disArray = resault.data.items.map((ele) => {
                         
                         return (<div
-                            key={ele.volumeInfo.title}><Card
+                            key={ele.volumeInfo.infoLink+ele.volumeInfo.title}><Card
                                 id={ele.accessInfo.id}
                                 search={true}
                                 title={ele.volumeInfo.title}
@@ -72,10 +73,13 @@ class Search extends Component {
        }
   
        API.saveBook(data).then((res)=>{
-        this.setState({modal: {display:"inline-block", backgroundColor: 'rgba(52, 52, 52, 0.8)'}})
+        console.log(res.data.title)
+        this.setState({modal: {display:"inline-block", backgroundColor: 'rgba(52, 52, 52, 0.8)'},
+                        title: res.data.title})
         setTimeout( ()=> {
-            this.setState({modal: {}})
-        }, 1000)
+            this.setState({modal: {},
+                            title: ""})
+        }, 1500)
        });
     }
     componentDidUpdate() {
@@ -92,7 +96,7 @@ class Search extends Component {
                 >
                     {this.state.disarray}
                 </ResultDiv>
-                <Modal rol={"save"} styling={this.state.modal}/>
+                <Modal rol={"save"} styling={this.state.modal} title={this.state.title}/>
             </div>
         )
     }
