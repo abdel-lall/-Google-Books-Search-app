@@ -1,4 +1,15 @@
-# Create React Express App
+# Google Books Search
+
+### Overview
+
+Google Books Search is a React-based Google Books Search app.    
+
+the user can search for books via the Google Books API and render them in the search page. User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database.  
+
+ the saved page renders all books saved to the Mongo database. User has an option to "View" the book, bringing them to the book on Google Books, or "Delete" a book, removing it from the Mongo database.  
+
+the app uses the MERN stack
+
 
 ## About This Boilerplate
 
